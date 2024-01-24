@@ -1,0 +1,18 @@
+{"semesters":
+[{"level":"Undergraduate","term":"Winter","year":"2022","tgpa":"9.250","cgpa":"9.025","courses":
+[{"program":"CHG","code":"4380","description":"Renewable Fuels","units":"3.00","grading":"D (50%) Passing Grade","letter":"A","points":"27.000"},
+  {"program":"CHG","code":"4364","description":"Oil and Gas Processing ","units":"3.00","grading":"D (50%) Passing Grade","letter":"A-","points":"24.000"},
+  {"program":"CHG","code":"4780","description":"Systemes particulaires et multi phases","units":"3.00","grading":"D (50%) Passing Grade","letter":"A+","points":"30.000"},
+  {"program":"PSY","code":"3777","description":"Processus cognitifs","units":"3.00","grading":"D (50%) Passing Grade","letter":"A+","points":"30.000"}
+]},
+  {"level":"Undergraduate","term":"Fall","year":"2021","tgpa":"8.800","cgpa":"8.800","courses":
+  [{"program":"CHG","code":"4331","description":"Introduction to Polymer Reaction Engineering","units":"3.00","grading":"D (50%) Passing Grade","letter":"A+","points":"30.000"},
+    {"program":"ALG","code":"3902","description":" Advanced German II","units":"3.00","grading":"D (50%) Passing Grade","letter":"B+","points":"21.000"},
+    {"program":"CHM","code":"4120","description":"Advanced Organic Chemistry","units":"3.00","grading":"D (50%) Passing Grade","letter":"A","points":"27.000"},
+    {"program":"CHG","code":"4302","description":"Environmental Biotechnology","units":"3.00","grading":"D (50%) Passing Grade","letter":"A","points":"27.000"},
+    {"program":"PSY","code":"3142","description":"Drugs and Behaviour","units":"3.00","grading":"D (50%) Passing Grade","letter":"A+","points":"27.000"}
+  ]},
+  {"level":"Undergraduate","term":"Spring/Summer","year":"2021","tgpa":"N/A","cgpa":"8.800","courses":
+  [{"program":"CGI","code":"4901","description":"CO-OP WORK TERM","units":"3.00","grading":"D (50%) Passing Grade","letter":"P","points":"N/A"}
+  ]}
+]}

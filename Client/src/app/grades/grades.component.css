@@ -1,0 +1,86 @@
+.page-layout{
+  display: flex;
+}
+
+.bar-left, .bar-right{
+  background-color: #880808;
+  width: 40%;
+}
+
+mat-icon{
+  padding-left: 0.3rem;
+}
+
+p{
+  font-size: 1.5rem;
+}
+
+span{
+  font-size: 1.2rem;
+}
+
+mat-label{
+  font-size: 1.1rem;
+}
+
+mat-form-field{
+  margin-right: 2rem;
+}
+
+.grades-container{
+  background-color: #f5f5f5;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 5rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.table-container{
+  overflow-y: auto;
+  height: 33rem;
+  position: relative;
+}
+
+.bar-left, .bar-right{
+  background-color: #880808;
+  width: 6%;
+}
+
+table{
+  table-layout: fixed;
+  width: 100%;
+}
+
+.gpa{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tgpa{
+  margin-self: auto;
+  padding-right: 6rem;
+}
+
+.cgpa{
+  padding-left: 1rem;
+}
+
+th{
+  font-size: 1rem;
+  width: 5rem;
+  z-index: 1;
+}
+
+td{
+  font-size: 1rem;
+}
+
+mat-checkbox{
+  margin-right: 2rem;
+}
+
+.columns{
+  margin-bottom: 1rem;
+}

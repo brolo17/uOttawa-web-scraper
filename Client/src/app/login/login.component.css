@@ -1,0 +1,61 @@
+.login-container{
+  width: 38rem;
+  height: 32rem;
+  background: white;
+  border-radius: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+span{
+  color: red;
+  text-align: center;
+  padding: 1rem;
+}
+
+p{
+  padding: 1rem;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.username-field{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.password-field{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+mat-label{
+  font-size: 1.2rem;
+}
+
+input{
+  font-size: 1.2rem;
+}
+
+a{
+  padding-left: 1rem;
+  font-size: 1.1rem;
+}
+
+.login-button{
+  margin-top: 1.5rem;
+  width: 50%;
+  align-self: center;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+mat-spinner{
+  align-self: center;
+  margin-top: 2rem;
+}

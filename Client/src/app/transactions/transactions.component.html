@@ -1,0 +1,89 @@
+<div class="page-layout">
+  <div class="bar-right"></div>
+  <div class="transactions-container">
+    <p>Your Transactions:</p>
+    <span>Date and Time Ranges:</span>
+    <div class="filters">
+      <mat-form-field>
+        <mat-label>Start date:</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="filterData()">
+        <mat-hint>YYYY-MM-DD</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>End date:</mat-label>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="selectedDate2" (dateChange)="filterData()">
+        <mat-hint>YYYY-MM-DD</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Start time</mat-label>
+        <mat-select [(ngModel)]="startTime" (ngModelChange)="filterData()">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let timeOption of timeOptions" [value]="timeOption">{{ timeOption }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>End time</mat-label>
+        <mat-select [(ngModel)]="endTime" (ngModelChange)="filterData()">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let timeOption of timeOptions" [value]="timeOption">{{ timeOption }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="type">
+        <mat-label>Type of transaction</mat-label>
+        <mat-select [(ngModel)]="selectedType" (ngModelChange)="filterData()">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let type of types" [value]="type">{{ type }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <span>Columns:</span>
+    <div class="columns">
+      <mat-checkbox [checked]="columnVisibility['date']" (change)="updateColumnVisibility('date')">Date</mat-checkbox>
+      <mat-checkbox [checked]="columnVisibility['time']" (change)="updateColumnVisibility('time')">Time</mat-checkbox>
+      <mat-checkbox [checked]="columnVisibility['withdrawals']" (change)="updateColumnVisibility('withdrawals')">Withdrawals</mat-checkbox>
+      <mat-checkbox [checked]="columnVisibility['deposits']" (change)="updateColumnVisibility('deposits')">Deposits</mat-checkbox>
+      <mat-checkbox [checked]="columnVisibility['description']" (change)="updateColumnVisibility('description')">Description</mat-checkbox>
+    </div>
+    <h2>Balance: {{balance}}</h2>
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="date">
+          <th mat-sort-header [hidden]="!columnVisibility['date']" class="trans-date" mat-header-cell *matHeaderCellDef> Date <mat-icon>date_range</mat-icon></th>
+          <td [hidden]="!columnVisibility['date']" mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="time">
+          <th mat-sort-header [hidden]="!columnVisibility['time']" class="trans-time" mat-header-cell *matHeaderCellDef> Time <mat-icon>access_time</mat-icon></th>
+          <td [hidden]="!columnVisibility['time']" mat-cell *matCellDef="let element"> {{element.time}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="withdrawals">
+          <th mat-sort-header [hidden]="!columnVisibility['withdrawals']" class="withdrawals" mat-header-cell *matHeaderCellDef> Withdrawals <mat-icon>hdr_strong</mat-icon></th>
+          <td [hidden]="!columnVisibility['withdrawals']" mat-cell *matCellDef="let element"> {{element.withdrawal}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="deposits">
+          <th mat-sort-header [hidden]="!columnVisibility['deposits']" class="deposits" mat-header-cell *matHeaderCellDef> Deposits <mat-icon>hdr_weak</mat-icon></th>
+          <td [hidden]="!columnVisibility['deposits']" mat-cell *matCellDef="let element"> {{element.deposit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-sort-header [hidden]="!columnVisibility['description']" class="description" mat-header-cell *matHeaderCellDef> Description <mat-icon>description</mat-icon></th>
+          <td [hidden]="!columnVisibility['description']" mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  <div class="bar-left"></div>
+</div>
